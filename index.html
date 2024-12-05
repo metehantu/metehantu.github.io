@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Arial', sans-serif;
-      background-color: #18191c; /* Karanlık tema */
+      background-color: #18191c;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -32,14 +32,6 @@
       font-size: 30px;
       color: #7289da;
       margin: 0;
-    }
-
-    header select {
-      padding: 8px;
-      background-color: #3a3c42;
-      border: none;
-      color: #fff;
-      border-radius: 5px;
     }
 
     .map-container {
@@ -103,11 +95,6 @@
 <body>
   <header>
     <h1>Aziyy - Pixel Planet</h1>
-    <select id="languages">
-      <option value="en">English</option>
-      <option value="tr">Türkçe</option>
-      <option value="es">Español</option>
-    </select>
   </header>
 
   <div class="map-container">
@@ -194,31 +181,6 @@
 
     document.getElementById("brush-size-large").addEventListener("click", () => {
       brushSize = 20;
-    });
-
-    // Dil değişimi
-    const languageSelect = document.getElementById('languages');
-    languageSelect.addEventListener('change', function() {
-      const selectedLanguage = languageSelect.value;
-      if (selectedLanguage === 'tr') {
-        document.getElementById('clear').innerText = 'Haritayı Temizle';
-        document.querySelector('label[for="color"]').innerText = 'Fırça Rengi:';
-        document.getElementById('brush-size-small').innerText = 'Küçük Fırça';
-        document.getElementById('brush-size-medium').innerText = 'Orta Fırça';
-        document.getElementById('brush-size-large').innerText = 'Büyük Fırça';
-      } else if (selectedLanguage === 'es') {
-        document.getElementById('clear').innerText = 'Borrar Mapa';
-        document.querySelector('label[for="color"]').innerText = 'Color del pincel:';
-        document.getElementById('brush-size-small').innerText = 'Pincel pequeño';
-        document.getElementById('brush-size-medium').innerText = 'Pincel mediano';
-        document.getElementById('brush-size-large').innerText = 'Pincel grande';
-      } else {
-        document.getElementById('clear').innerText = 'Clear Map';
-        document.querySelector('label[for="color"]').innerText = 'Brush Color:';
-        document.getElementById('brush-size-small').innerText = 'Small Brush';
-        document.getElementById('brush-size-medium').innerText = 'Medium Brush';
-        document.getElementById('brush-size-large').innerText = 'Large Brush';
-      }
     });
   </script>
 </body>
